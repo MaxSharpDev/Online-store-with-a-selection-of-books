@@ -33,11 +33,10 @@ namespace BookStore.DataAcces.Repository
                 Price = book.Price,
             };
 
-            await _context.Books.AddAsync(bookEntity);
+            
             await _context.SaveChangesAsync();
 
             return bookEntity.Id;
-
         }
         public async Task<Guid> Update(Guid id, string title, string description, decimal price)
         {
